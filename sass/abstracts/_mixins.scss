@@ -12,3 +12,7 @@
   -webkit-background-clip: text;
   color: transparent;
 }
+
+@mixin boxShadow($opacity) {
+  box-shadow: 0 1.5rem 4rem rgba($color-black, $opacity);
+}
