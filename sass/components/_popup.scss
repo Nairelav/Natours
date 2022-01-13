@@ -1,0 +1,79 @@
+.popup {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba($color-black, 0.8);
+  z-index: 2000;
+
+  display: none;
+
+  &:target {
+    display: block;
+  }
+
+  &__close {
+    &:link,
+    &:visited {
+      text-decoration: none;
+      color: $color-grey-dark;
+      position: absolute;
+      top: 2rem;
+      right: 3rem;
+      font-size: 3rem;
+      display: inline-block;
+      transition: all .2s;
+    }
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+
+  &__content {
+    width: 75%;
+    // height: 50rem;
+    background-color: $color-white;
+    display: table;
+    @include boxShadow(0.2);
+    @include absolute-center;
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  &__left {
+    width: 33.333333%;
+    display: table-cell;
+  }
+
+  &__right {
+    width: 66.666667%;
+    display: table-cell;
+    vertical-align: middle;
+    padding: 3rem 5rem;
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+  }
+
+  &__text {
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+
+    -moz-column-count: 2;
+    -moz-column-gap: 4rem;
+    -moz-column-rule: 1px solid rgba($color-grey-dark-2, 0.2);
+
+    column-count: 2;
+    column-gap: 4rem;
+    column-rule: 1px solid rgba($color-grey-dark-2, 0.2);
+
+    hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    -webkit-hyphens: auto;
+  }
+}
